@@ -4,20 +4,24 @@ module.exports = function (grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		ts: {
 			default: {
-				tsconfig: 'tsconfig.json'
-			}
-		},
-		babel: {
-			options: {
-				sourceMap: true,
-				presets: ['@babel/preset-env']
+				tsconfig: 'tsconfig.json',
+				outDir: "lib"
 			},
-			dist: {
-				files: {
-					'dist/renameKeys.js': 'renameKeys.js'
-				}
-			}
 		},
+		// babel: {
+		// 	options: {
+		// 		sourceMap: true,
+		// 		presets: ['@babel/preset-env']
+		// 	},
+		// 	dist: {
+		// 		files: [{
+		// 			expand: true,
+		// 			src: ['lib/*.js'],
+		// 			dest: 'dist',
+		// 			ext: '.js'
+		// 		}]
+		// 	}
+		// },
 		mochaTest: {
 			test: {
 				options: {
@@ -28,22 +32,24 @@ module.exports = function (grunt) {
 					clearCacheFilter: (key) => true, // Optionally defines which files should keep in cache
 					noFail: false // Optionally set to not fail on failed tests (will still fail on other errors)
 				},
-				src: ['test/*.js']
+				src: ['lib/test/*.spec.js']
 			}
 		},
 		uglify: {
-			//使用options这个名声
 			options: {
-				//为true表示允许添加头部信息
+				//在头部添加 js文件名/版本号和时间的注释
 				stripBanners: true,
-				//在头部添加 js文件名和时间的注释
 				banner: '/*! <%=pkg.name%>-<%=pkg.version%>.js <%=grunt.template.today("yyyy-mm-dd") %> */\n'
 			},
-			//files名称任意，比如下方的build 关键是src-dest要指示好
-			files: {
-				src: 'dist/renameKeys.js',
-				dest: 'dist/renameKeys.min.js'
-			}
+
+				dist: {
+					files: [{
+						expand: true,
+						src: ['lib/*.js'],
+						dest: 'dist',
+						ext: '.js'
+					}]
+				}
 		},
 	});
 
@@ -52,7 +58,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks("grunt-ts");
 	grunt.registerTask('default', [
 		'ts',
-		'babel',
+		// 'babel',
 		'mochaTest',
 		'uglify',
 	]);

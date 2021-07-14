@@ -1,3 +1,8 @@
 {
-
+//  "compilerOptions": {
+////    "outDir": "./lib",
+////    "rootDir": "./"
+//  },
+//  "include": ["*.ts"],
+//  "exclude": ["node_modules"]
 }
