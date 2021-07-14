@@ -1,6 +1,6 @@
 {
   "name": "spider-utils",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "这是生成的压缩过的js",
   "main": "util.js",
   "scripts": {
