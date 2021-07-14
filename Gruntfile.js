@@ -48,7 +48,7 @@ module.exports = function (grunt) {
 						expand: true,
 						cwd:"lib/",
 						src: ['src/*.js'],
-						dest: 'spider-util/',
+						dest: 'spider-utils/',
 						ext: '.js',
 						extDot: 'first',
 						rename: function (e,name) {       // The value for rename must be a function
