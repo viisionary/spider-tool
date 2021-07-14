@@ -4,7 +4,7 @@
  * @param obj
  * @returns {{}}
  */
-const renameKeys = (keysMap, obj) =>
+const renameKeys = (keysMap:any, obj:any) =>
 	Object.keys(obj).reduce(
 		(acc, key) => ({
 			...acc,
@@ -12,4 +12,5 @@ const renameKeys = (keysMap, obj) =>
 		}),
 		{}
 	);
-module.exports = renameKeys
+export default renameKeys
+// module.exports = renameKeys
