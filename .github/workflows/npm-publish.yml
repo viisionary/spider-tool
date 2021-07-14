@@ -19,11 +19,6 @@ jobs:
           registry-url: https://registry.npmjs.org
       - run: npm ci
       - run: npm run build
-      - run: cp ./spider-utils-package.json spider-utils/package.json
-      - run: ls
-      - run: |
-          cd spider-utils
-          ls
       - run: ls
       - run: |
           cd spider-utils

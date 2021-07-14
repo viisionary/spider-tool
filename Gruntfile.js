@@ -1,5 +1,8 @@
 module.exports = function (grunt) {
 	require('load-grunt-tasks')(grunt);
+	grunt.registerTask('deleteLib', 'A test task', function () {
+		grunt.file.delete('lib')
+	});
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		ts: {
@@ -43,34 +46,45 @@ module.exports = function (grunt) {
 				banner: '/*! <%=pkg.name%>-<%=pkg.version%>.js <%=grunt.template.today("yyyy-mm-dd") %> */\n'
 			},
 			// files: ['lib/src/*.js', ],
-				dist: {
-					files: [{
-						expand: true,
-						cwd:"lib/",
-						src: ['src/*.js'],
-						dest: 'spider-utils/',
-						ext: '.js',
-						extDot: 'first',
-						rename: function (e,name) {       // The value for rename must be a function
-							return e+name.substring(4); // The function must return a string with the complete destination
-						}
-					}]
-				}
+			dist: {
+				files: [{
+					expand: true,
+					cwd: "lib/",
+					src: ['src/*.js'],
+					dest: 'spider-utils/',
+					ext: '.js',
+					extDot: 'first',
+					rename: function (e, name) {       // The value for rename must be a function
+						return e + name.substring(4); // The function must return a string with the complete destination
+					}
+				}]
+			}
 		},
-
+		copy: {
+			main: {
+				files: [{
+					expand: true,
+					cwd: 'lib/',
+					dest: 'spider-utils/',
+					src: ['src/*.d.ts'],
+					rename: function (e, name) {       // The value for rename must be a function
+						return e + name.substring(4); // The function must return a string with the complete destination
+					}
+				}, { src: 'spider-utils-package.json', dest: 'spider-utils/package.json' }],
+			}
+		},
 	});
 
 	grunt.loadNpmTasks('grunt-mocha-test');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks("grunt-ts");
-
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
 	grunt.registerTask('default', [
 		'ts',
-		// 'babel',
 		'mochaTest',
 		'uglify',
-	]);
-
-	// grunt.file.delete('lib')
+		'copy',
+		'deleteLib'
+	],);
 };

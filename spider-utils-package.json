@@ -1,14 +1,19 @@
 {
   "name": "spider-utils",
-  "version": "1.0.3",
-  "description": "这是生成的压缩过的js",
+  "version": "1.0.8",
+  "description": "utils collection",
   "main": "util.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viisionary/spider-utils.git"
+  },
   "keywords": [
     "util"
   ],
+  "typings": "./index.d.ts",
   "author": "visionary",
   "license": "ISC",
   "bugs": {
