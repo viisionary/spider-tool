@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-//    "target": "es6", 写上不转换const了 压缩的插件识别不了
+    "target": "es5",
     "module": "commonjs",
     "lib": [
       "dom",
