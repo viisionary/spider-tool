@@ -69,7 +69,7 @@ module.exports = function (grunt) {
 		'ts',
 		// 'babel',
 		'mochaTest',
-		'uglify',
+		// 'uglify',
 	]);
 
 	// grunt.file.delete('lib')
