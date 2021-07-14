@@ -18,14 +18,6 @@ jobs:
           node-version: 14
       - run: npm ci
       - run: npm run build
-      - run: ls
-      - run: cp ./spider-utils-package.json spider-utils/package.json
-      - run: cd spider-utils & ls
-      - run: cd spider-utils & npm version patch
-      - run: ls
-      - run: cd spider-utils & npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
   publish-npm:
     runs-on: ubuntu-latest
     needs: build
@@ -36,5 +28,12 @@ jobs:
           node-version: 14
           registry-url: https://registry.npmjs.org
       - run: ls
+      - run: cp ./spider-utils-package.json spider-utils/package.json
+      - run: |
+          cd spider-utils
+          ls
+      - run: |
+          cd spider-utils
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
