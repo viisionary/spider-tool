@@ -28,8 +28,9 @@ jobs:
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org
-      - run: cp spider-utils-package.json ./spider-utils/package.json
       - run: cd spider-utils
+      - run: ls
+      - run: cp ../spider-utils-package.json ./package.json
       - run: npm version patch
       - run: npm publish
         env:
