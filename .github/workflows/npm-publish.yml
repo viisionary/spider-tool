@@ -22,8 +22,9 @@ jobs:
       - run: cp ./spider-utils-package.json spider-utils/package.json
       - run: cd spider-utils
       - run: ls
-      - run: npm version patch
-      - run: npm publish
+      - run: cd spider-utils & npm version patch
+      - run: ls
+      - run: cd spider-utils & npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
   publish-npm:
