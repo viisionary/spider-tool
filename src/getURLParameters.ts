@@ -6,4 +6,4 @@ const getURLParameters = url =>
 		{}
 	);
 
-module.exports = getURLParameters
+export default getURLParameters

@@ -9,8 +9,8 @@ const nest = (items, id, link) =>
 	items
 		.filter(item => item[link] === id)
 		.map(item => ({ ...item, children: nest(items, item.id, link) }));
-module.exports = nest
 
+export default nest
 //Examples
 // const comments = [
 //   { id: 1, parent_id: null },

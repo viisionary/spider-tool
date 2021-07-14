@@ -4,6 +4,7 @@ module.exports = function (grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		ts: {
 			default: {
+				src: ["src/*.ts", "!node_modules/**"],
 				tsconfig: 'tsconfig.json',
 				outDir: "lib"
 			},
@@ -41,25 +42,35 @@ module.exports = function (grunt) {
 				stripBanners: true,
 				banner: '/*! <%=pkg.name%>-<%=pkg.version%>.js <%=grunt.template.today("yyyy-mm-dd") %> */\n'
 			},
-
+			// files: ['lib/src/*.js', ],
 				dist: {
 					files: [{
 						expand: true,
-						src: ['lib/*.js'],
-						dest: 'dist',
-						ext: '.js'
+						cwd:"lib/",
+						src: ['src/*.js'],
+						dest: 'dist/',
+						ext: '.js',
+						extDot: 'first',
+						rename: function (e,name) {       // The value for rename must be a function
+							return e+name.substring(4); // The function must return a string with the complete destination
+						}
 					}]
 				}
 		},
+
 	});
 
 	grunt.loadNpmTasks('grunt-mocha-test');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks("grunt-ts");
+
+
 	grunt.registerTask('default', [
 		'ts',
-		// 'babel',
 		'mochaTest',
+		// 'babel',
 		'uglify',
 	]);
+
+	grunt.file.delete('lib')
 };

@@ -4,4 +4,4 @@ const onClickOutside = (element, callback) => {
 	});
 };
 
-module.exports = onClickOutside
+export default onClickOutside

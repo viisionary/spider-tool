@@ -1,11 +1,11 @@
-const sampleSize = require('./sampleSize')
-
 /**
  *
  * @param toBeFilled 被填充的数组
  * @param toBeSelected 待选取的数组
  * @returns {[]}
  */
+import sampleSize from "./sampleSize";
+
 function randomFill(toBeFilled, toBeSelected) {
 	const random = sampleSize(toBeSelected);
 	const outcome =[];
@@ -18,7 +18,7 @@ function randomFill(toBeFilled, toBeSelected) {
 	}
 	return outcome
 }
-module.exports = randomFill
+export default randomFill
 /**
  * example
  * randomFill([1, 2, , , 3, , 1, ,], ['a', 'b', 'c', 'd', 'e', 'f', 'g'])

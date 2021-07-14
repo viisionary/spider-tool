@@ -8,6 +8,7 @@
 function deDuplicationBy(list, deList, key) {
 	return list.filter((item) => !deList.map((item) => item ? item[key] : '').includes(item ? item[key] : ''))
 }
+export default deDuplicationBy
 // whichWeek
 /*
  console.info(deDuplicationBy([{ id: '1' }, { id: '3' }, {
@@ -16,4 +17,3 @@ function deDuplicationBy(list, deList, key) {
 }, {}, undefined, null, { hah: '1' }], [{ id: '1' },], 'id'))
 */
 
-module.exports = deDuplicationBy

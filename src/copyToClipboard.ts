@@ -3,7 +3,7 @@
  * @param str
  * @returns void
  */
-const copyToClipboard = str => {
+const copyToClipboard = (str:string) => {
 	const el = document.createElement('textarea');
 	el.value = str;
 	el.setAttribute('readonly', '');

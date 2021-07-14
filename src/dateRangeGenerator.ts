@@ -12,7 +12,7 @@ const dateRangeGenerator = function* (start, end, step = 1) {
 		d.setDate(d.getDate() + step);
 	}
 };
-module.exports = dateRangeGenerator
+export default dateRangeGenerator
 // Examples
 // const getWeekStartAndEnd = require("./getWeekStartAndEnd");
 // console.info([...dateRangeGenerator(...getWeekStartAndEnd(new Date()))].map(item=>item.toLocaleString()));

@@ -14,7 +14,7 @@ function flat(array, keys) {
 	return outcome.filter(item => item)
 }
 
-module.exports = flat
+export default flat
 // Example
 //
 // flat([

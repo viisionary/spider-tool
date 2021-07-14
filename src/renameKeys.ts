@@ -13,4 +13,3 @@ const renameKeys = (keysMap: any, obj: any) =>
         {}
     );
 export default renameKeys
-// module.exports = renameKeys

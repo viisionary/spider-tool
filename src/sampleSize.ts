@@ -13,4 +13,4 @@ const sampleSize = ([...arr], n = arr.length) => {
 	return arr.slice(0, n);
 };
 
-module.exports = sampleSize
+export default sampleSize

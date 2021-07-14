@@ -4,7 +4,8 @@
   "description": "js 常用方法collection",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "build": "grunt"
   },
   "keywords": [
     "tool",

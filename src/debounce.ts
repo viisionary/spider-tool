@@ -7,7 +7,7 @@ const debounce = (fn, timing) => {
 		}, timing);
 	}
 };
-module.exports = debounce;
+export default debounce
 /*
 EXAMPLE
 const oldFN = (params) => {

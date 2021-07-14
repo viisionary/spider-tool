@@ -9,7 +9,7 @@ const throttle = (fn, timing) => {
 		}, timing);
 	}
 };
-module.exports = throttle;
+export default throttle;
 /**
  * EXAMPLE
  const oldFN = (params) => {
