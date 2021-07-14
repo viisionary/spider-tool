@@ -72,5 +72,5 @@ module.exports = function (grunt) {
 		'uglify',
 	]);
 
-	grunt.file.delete('lib')
+	// grunt.file.delete('lib')
 };

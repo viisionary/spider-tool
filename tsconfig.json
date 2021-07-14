@@ -1,12 +1,10 @@
 {
   "compilerOptions": {
-    // -----支持es6语法-------
     "module": "es2016",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
-    ],
-    // -----支持es6语法-------
+    ]
   }
 }

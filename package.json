@@ -2,15 +2,24 @@
   "name": "spider-tool",
   "version": "1.0.0",
   "description": "js 常用方法collection",
-  "main": "index.js",
+  "main": "spider.js",
   "scripts": {
     "test": "mocha",
     "build": "grunt"
   },
   "keywords": [
     "tool",
-    "js"
+    "js",
+    "util"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viisionary/spider-tool"
+  },
+  "bugs": {
+    "url": "https://github.com/viisionary/spider-tool/issues"
+  },
+  "icon": "https://blush.design/api/download?shareUri=IZaEBXfUAPrayxWv&c=Skin_0%7Effdbb4&w=400&h=400&fm=png",
   "author": "visionary",
   "license": "ISC",
   "devDependencies": {
