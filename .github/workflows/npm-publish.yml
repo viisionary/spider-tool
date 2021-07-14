@@ -9,6 +9,18 @@ on:
       - master
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - run: npm ci
+      - run: npm run build
+      - run: cp spider-utils-package.json ./spider-utils/package.json
+      - run: cd spider-utils
+      - run: ls
   publish-npm:
     runs-on: ubuntu-latest
     steps:
@@ -17,9 +29,7 @@ jobs:
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org
-      - run: npm ci
+      - run: npm version patch
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-
-

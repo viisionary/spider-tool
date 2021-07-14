@@ -48,7 +48,7 @@ module.exports = function (grunt) {
 						expand: true,
 						cwd:"lib/",
 						src: ['src/*.js'],
-						dest: 'dist/',
+						dest: 'spider-util/',
 						ext: '.js',
 						extDot: 'first',
 						rename: function (e,name) {       // The value for rename must be a function
@@ -69,7 +69,7 @@ module.exports = function (grunt) {
 		'ts',
 		// 'babel',
 		'mochaTest',
-		// 'uglify',
+		'uglify',
 	]);
 
 	// grunt.file.delete('lib')
