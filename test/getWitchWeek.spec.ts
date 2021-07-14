@@ -1,9 +1,8 @@
-// @ts-nocheck
-
 import getWitchWeek from "../src/getWitchWeek";
 import {equal} from "assert";
 
 describe('Date', function () {
+
     describe('#getWitchWeek()', function () {
         // const getWitchWeek = require("../getWitchWeek");
         it('2021/7/14 应该是 7月第三周', function () {
