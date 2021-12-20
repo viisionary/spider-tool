@@ -7,7 +7,7 @@ module.exports = function (grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		ts: {
 			default: {
-				src: ["src/*.ts", "!node_modules/**"],
+				src: ["src/**/*.ts", "!node_modules/**"],
 				tsconfig: 'tsconfig.json',
 				outDir: "lib"
 			},
@@ -50,7 +50,7 @@ module.exports = function (grunt) {
 				files: [{
 					expand: true,
 					cwd: "lib/",
-					src: ['src/*.js'],
+					src: ['src/**/*.js'],
 					dest: 'spider-utils/',
 					ext: '.js',
 					extDot: 'first',

@@ -17,15 +17,17 @@ import delay from "./fn/delay";
 import debounce from "./fn/debounce";
 import charIsNumber from "./string/charIsNumber";
 import downloadFile from "./borrow/downloadFile";
+import charIsChinese from "./string/charIsChinese";
+import charIsLetter from "./string/charIsLetter";
 export default {
-    deDuplicationBy,
-    flatByKeys,
+    // deDuplicationBy,
+    // flatByKeys,
     nest,
-    randomFill,
+    // randomFill,
     sampleSize,
     // borrow
     copyToClipboard,
-    downloadFile,
+    // downloadFile,
 
     // date
     dateRangeGenerator,
@@ -37,9 +39,9 @@ export default {
     delay,
     throttle,
     // string
-    charIsChinese,
+    // charIsChinese,
+    // charIsNumber,
     charIsLetter,
-    charIsNumber,
     checkSpecificKey,
     getURLParameters,
     legibleByte,
