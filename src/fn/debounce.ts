@@ -1,3 +1,8 @@
+/**
+ *
+ * @param fn 防抖
+ * @param timing
+ */
 const debounce = (fn, timing) => {
 	let timer;
 	return function (...params) {

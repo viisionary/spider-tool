@@ -74,12 +74,10 @@ module.exports = function (grunt) {
 			}
 		},
 	});
-
 	grunt.loadNpmTasks('grunt-mocha-test');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks("grunt-ts");
 	grunt.loadNpmTasks('grunt-contrib-copy');
-
 	grunt.registerTask('default', [
 		'ts',
 		'mochaTest',

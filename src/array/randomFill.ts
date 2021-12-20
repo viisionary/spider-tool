@@ -2,7 +2,7 @@
  *
  * @param toBeFilled 被填充的数组
  * @param toBeSelected 待选取的数组
- * @returns {[]}
+ * @returns {[]} 一个被填充满的新数组
  */
 import sampleSize from "./sampleSize";
 
