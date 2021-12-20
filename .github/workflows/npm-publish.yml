@@ -4,6 +4,7 @@
 name: Node.js Package
 
 on:
+  #TODO 之后改成 release
   push:
     branches:
       - master
@@ -22,6 +23,7 @@ jobs:
       - run: ls
       - run: |
           cd spider-utils
+          npm version patch
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

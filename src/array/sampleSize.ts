@@ -1,5 +1,5 @@
 /**
- * 随机排序并截取
+ * 随机排序并截取 同lodash sampleSize
  * @param arr
  * @param n 截取的数量，默认不截取 即 arr.length
  * @returns {*}
