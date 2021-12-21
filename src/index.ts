@@ -17,8 +17,8 @@ import delay from "./fn/delay";
 import debounce from "./fn/debounce";
 import charIsNumber from "./string/charIsNumber";
 import downloadFile from "./borrow/downloadFile";
-import charIsChinese from "./string/charIsChinese";
-import charIsLetter from "./string/charIsLetter";
+import charHasChinese from "./string/charHasChinese";
+import charHasLetter from "./string/charHasLetter";
 export default {
     // deDuplicationBy,
     // flatByKeys,
@@ -39,9 +39,9 @@ export default {
     delay,
     throttle,
     // string
-    // charIsChinese,
+    // charHasChinese,
     // charIsNumber,
-    charIsLetter,
+    charIsLetter: charHasLetter,
     checkSpecificKey,
     getURLParameters,
     legibleByte,

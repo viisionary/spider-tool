@@ -11,8 +11,9 @@
 ###### sortByChar
  根据指定fn排序
 #### string
-###### charIsChinese
-###### charIsLetter
+###### charHasChinese
+是否含有中文字符
+###### charHasLetter
 ###### charIsNumber
 ###### checkSpecificKey
  检查特殊符号

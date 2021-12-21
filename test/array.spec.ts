@@ -1,6 +1,7 @@
 import flatByKeys from "../src/array/flatByKeys";
-import {AssertionError, strictEqual} from "assert";
+import {strictEqual} from "assert";
 import randomFill from "../src/array/randomFill";
+import deepMerge from "../src/array/deepMerge";
 
 describe('数组处理', function () {
     describe('flatByKeys', function () {
@@ -27,20 +28,30 @@ describe('数组处理', function () {
             console.log(newArray)
         })
     })
-    describe('randomFill', ()=>{
+    describe('randomFill', () => {
         it('随机选取填充', function () {
-            const toFill =[1, 2, , , 3, , 1, ,];
+            const toFill = [1, 2, , , 3, , 1, ,];
             const picked = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
             const random = randomFill(toFill, picked);
             console.log(random)
             strictEqual(random.length, 8)
         });
         it('随机选取填充 - 引用类型', function () {
-            const toFill =[1, 2, , , 3, , 1, ,];
+            const toFill = [1, 2, , , 3, , 1, ,];
             const picked = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
             const random = randomFill(toFill, picked);
             console.log(random)
             strictEqual(random.length, 8)
+        });
+    });
+    describe('deepMerge', () => {
+        it('should deepMerge', function () {
+            const consequence = deepMerge(
+                {a: true, b: {c: [1, 2, 3]}},
+                {a: false, b: {d: [1, 2, 3]}},
+                (key, a, b) => (key === 'a' ? a && b : Object.assign({}, a, b))
+            ) as { a: any, b: { c: any, d: any }, };
+            strictEqual(consequence.a, false)
         });
     })
 })
