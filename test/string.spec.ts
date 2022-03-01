@@ -31,7 +31,6 @@ describe('字符串测试', () => {
 
         it('charIsNumber', function () {
             strictEqual(charIsNumber('12'), true);
-            strictEqual(charIsNumber(12), true);
             strictEqual(charIsNumber('sadf123'), false);
         });
     });
