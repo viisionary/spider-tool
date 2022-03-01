@@ -1,7 +1,7 @@
-import flatByKeys from "../src/array/flatByKeys";
 import {strictEqual} from "assert";
 import randomFill from "../src/array/randomFill";
 import deepMerge from "../src/array/deepMerge";
+import flatByKeys from "../src/array/flatByKeys";
 
 describe('数组处理', function () {
     describe('flatByKeys', function () {
@@ -32,14 +32,14 @@ describe('数组处理', function () {
         it('随机选取填充', function () {
             const toFill = [1, 2, , , 3, , 1, ,];
             const picked = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
-            const random = randomFill(toFill, picked);
+            const random = randomFill({toBeFilled : toFill, toBeSelected : picked});
             console.log(random)
             strictEqual(random.length, 8)
         });
         it('随机选取填充 - 引用类型', function () {
             const toFill = [1, 2, , , 3, , 1, ,];
             const picked = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
-            const random = randomFill(toFill, picked);
+            const random = randomFill({toBeFilled : toFill, toBeSelected : picked});
             console.log(random)
             strictEqual(random.length, 8)
         });

@@ -1,5 +1,5 @@
-export function convertBase64UrlToBlob(dataurl:string, filename = 'file') {
-    let arr = dataurl.split(',')
+function convertBase64UrlToBlob(dataUrl: string, filename = 'file'): File {
+    let arr = dataUrl.split(',')
     let mime = arr[0].match(/:(.*?);/)[1]
     let suffix = mime.split('/')[1]
     let bstr = atob(arr[1])
@@ -12,3 +12,5 @@ export function convertBase64UrlToBlob(dataurl:string, filename = 'file') {
         type: mime
     })
 }
+
+export default convertBase64UrlToBlob

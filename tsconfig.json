@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    // exports.default = copyToClipboard; 这种形式 node 可以引用
+//    "module": "commonjs",
+//    "module": "esnext",
     "esModuleInterop": true,
     "declaration": true,
 //    "declarationDir": "./lib/types",

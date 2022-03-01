@@ -6,15 +6,15 @@ const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFla
  * @param keys obj的key
  * @returns {*[]}
  */
-function flatByKeys(array, keys) {
-	let outcome = array
-	for (const key of keys) {
-		outcome = deepFlatten(outcome.map(item => item && item[key] ? item[key] : null));
-	}
-	return outcome.filter(item => item)
+function flatByKeys(array: any[], keys: string[]) {
+    let outcome = array
+    for (const key of keys) {
+        outcome = deepFlatten(outcome.map(item => item && item[key] ? item[key] : null));
+    }
+    return outcome.filter(item => item)
 }
 
-export default flatByKeys
+export default flatByKeys;
 // Example
 //
 // flat([
