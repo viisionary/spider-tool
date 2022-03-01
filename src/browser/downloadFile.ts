@@ -1,4 +1,4 @@
- function downloadFile(buffer, name) {
+function downloadFile(buffer: any, name: string): void {
     try {
         let url = window.URL.createObjectURL(new Blob([buffer]));
         let link = document.createElement('a');
@@ -8,7 +8,7 @@
         document.body.appendChild(link);
         link.click();
     } catch (e) {
-        console.log(e);
+        console.error(e);
         window.navigator.msSaveBlob(new Blob([buffer]), `${name}.xls`);
     }
 }

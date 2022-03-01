@@ -5,15 +5,17 @@
  * @param key
  * @returns {*}
  */
-function deDuplicationBy(list, deList, key) {
-	return list.filter((item) => !deList.map((item) => item ? item[key] : '').includes(item ? item[key] : ''))
+function deDuplicationBy(list: any[], deList: any[], key: string) {
+    return list.filter((item) => !deList.map((item) => item ? item[key] : '').includes(item ? item[key] : ''))
 }
+
 export default deDuplicationBy
-// whichWeek
 /*
  console.info(deDuplicationBy([{ id: '1' }, { id: '3' }, {
 	id: '11',
 	name: '1'
-}, {}, undefined, null, { hah: '1' }], [{ id: '1' },], 'id'))
+}, {}, undefined, null, { hah: '1' }],
+[{ id: '1' },],
+ 'id'))
 */
 

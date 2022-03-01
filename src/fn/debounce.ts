@@ -3,14 +3,16 @@
  * @param fn 防抖
  * @param timing
  */
-const debounce = (fn, timing) => {
-	let timer;
-	return function (...params) {
+
+type CustomDebounce = (fn: (...params: any) => any, timing: number) => (...params: any) => void;
+export const debounce: CustomDebounce = (fn: (...params: any) => any, timing: number) => {
+	let timer: any;
+	return function(...params) {
 		clearTimeout(timer);
 		timer = setTimeout(() => {
-			fn(params);
+			fn(...params);
 		}, timing);
-	}
+	};
 };
 export default debounce
 /*

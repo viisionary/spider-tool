@@ -1,4 +1,4 @@
-function charIsNumber(char) {
+function charIsNumber(char: string): boolean {
     return Number.isInteger(Number.parseInt(char));
 }
 

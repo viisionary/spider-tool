@@ -2,6 +2,8 @@
  * copy to clipboard
  * @param str
  * @returns void
+ *
+ * 浏览器方法测试地址：
  */
 const copyToClipboard = async (str: string) => {
     if (!document && !navigator) {

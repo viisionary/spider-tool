@@ -66,7 +66,7 @@ module.exports = function (grunt) {
 					expand: true,
 					cwd: 'lib/',
 					dest: 'spider-utils/',
-					src: ['src/*.d.ts'],
+					src: ['src/*.d.ts', 'src/*/*.d.ts'],
 					rename: function (e, name) {       // The value for rename must be a function
 						return e + name.substring(4); // The function must return a string with the complete destination
 					}
